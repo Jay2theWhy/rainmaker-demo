@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'DeterminationFont';
+    src: url('./fonts/DeterminationMonoWebRegular-Z5oq.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'DeterminationFont', sans-serif;
+}
