@@ -1,14 +1,20 @@
 import React from 'react';
 import { useState } from 'react';
 import './App.css';
-import { RainEffectCustom } from './rain';
+import { RainEffect } from 'rainmaker-react';
 
 const App: React.FC = () => {
   const [count, setCount] = useState<number>(50);
+  const [wind, setWind] = useState<number>(0);
 
-  const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(event.target.value, 10);
     setCount(value);
+  };
+
+  const handleWindChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(event.target.value, 0);
+    setWind(value);
   };
 
   return (
@@ -18,13 +24,21 @@ const App: React.FC = () => {
         <input 
           type="range"
           value={count}
-          onChange={handleSliderChange}
+          onChange={handleCountChange}
           min="0"
           max="1000"
         />
         <span className="count-display">{count}</span>
+        <input 
+          type="range"
+          value={wind}
+          onChange={handleWindChange}
+          min="-10"
+          max="10"
+        />
+        <span className="count-display">{wind}</span>
       </div>
-      <RainEffectCustom className="rain-effect" count={count}/>
+      <RainEffect className="rain-effect" count={count} wind={wind}/>
     </div>
   );
 }
