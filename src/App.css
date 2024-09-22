@@ -1,6 +1,9 @@
 .title {
     text-align: center;
     font-family: 'DeterminationFont';
+    font-size: 60px;
+    color: #fff;
+    margin-top: 40vh;
 }
 
 .rain-effect {
