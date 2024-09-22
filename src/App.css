@@ -14,3 +14,31 @@
     height: 100%;
     z-index: -1;
 }
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    align-self: center;
+    margin: 0 auto;
+}
+
+.option-entry {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.option-name {
+    font-size: 24px;
+}
+
+.option-slider {
+    display: flex;
+    flex-direction: row;
+}
+
+.slider-label {
+    width: 40px;
+    text-align: center;
+}
