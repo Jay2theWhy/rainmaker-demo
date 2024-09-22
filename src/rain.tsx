@@ -1,0 +1,90 @@
+import { useRainEffect, createRainState, RainEffectState } from "rainmaker-react";
+import React, { useRef, useEffect } from "react";
+
+interface Props {
+  count?: number;
+  fps?: number;
+  fallSpeed?: number;
+  jitterX?: number;
+  dropletLength?: number;
+  dropletWidth?: number;
+  dropletStyle?: string;
+  wind?: number;
+  bgStyle?: string;
+  noBackground?: boolean;
+  className?: string;
+}
+
+export const RainEffectCustom: React.FC<Props> = ({
+  count = 1000,
+  fps = 60,
+  fallSpeed = 6,
+  jitterX = 0.1,
+  dropletLength = 3,
+  dropletWidth = 2,
+  dropletStyle = "rgba(43, 133, 194, 0.6)",
+  wind = 0,
+  bgStyle = "rgb(64, 93, 112)",
+  noBackground = false,
+  ...restProps
+}) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const stateReference = useRef<RainEffectState>(
+    createRainState({
+      count,
+      fps,
+      fallSpeed,
+      jitterX,
+      dropletLength,
+      dropletWidth,
+      dropletStyle,
+      wind,
+      bgStyle,
+      noBackground,
+    })
+  );
+  useEffect(() => {
+    stateReference.current = createRainState({
+      count,
+      fps,
+      fallSpeed,
+      jitterX,
+      dropletLength,
+      dropletWidth,
+      dropletStyle,
+      wind,
+      bgStyle,
+      noBackground,
+    });
+  }, [
+    count,
+    fps,
+    fallSpeed,
+    jitterX,
+    dropletLength,
+    dropletWidth,
+    dropletStyle,
+    wind,
+    bgStyle,
+    noBackground,
+  ]);
+
+  useRainEffect(
+    canvasRef,
+    {
+      count,
+      fps,
+      fallSpeed,
+      jitterX,
+      dropletLength,
+      dropletWidth,
+      dropletStyle,
+      wind,
+      bgStyle,
+      noBackground,
+    },
+    stateReference
+  );
+
+  return <canvas ref={canvasRef} {...{ count, fps }} {...restProps} />;
+};
