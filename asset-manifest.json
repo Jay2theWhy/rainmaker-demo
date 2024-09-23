@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/rainmaker-demo/static/css/main.4b535236.css",
+    "main.js": "/rainmaker-demo/static/js/main.bc176f02.js",
+    "static/js/453.24d52ea1.chunk.js": "/rainmaker-demo/static/js/453.24d52ea1.chunk.js",
+    "static/media/DeterminationMonoWebRegular-Z5oq.ttf": "/rainmaker-demo/static/media/DeterminationMonoWebRegular-Z5oq.2f9b96898e4db1b8e690.ttf",
+    "index.html": "/rainmaker-demo/index.html",
+    "main.4b535236.css.map": "/rainmaker-demo/static/css/main.4b535236.css.map",
+    "main.bc176f02.js.map": "/rainmaker-demo/static/js/main.bc176f02.js.map",
+    "453.24d52ea1.chunk.js.map": "/rainmaker-demo/static/js/453.24d52ea1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b535236.css",
+    "static/js/main.bc176f02.js"
+  ]
+}
